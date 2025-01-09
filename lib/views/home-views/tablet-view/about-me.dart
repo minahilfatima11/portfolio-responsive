@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:web85/views/home-views/desktop-view/services-view.dart';
+import 'package:web85/views/home-views/tablet-view/contact-me.dart';
+import 'package:web85/views/home-views/tablet-view/featured-projects.dart';
 import 'package:web85/views/home-views/tablet-view/services-view.dart';
 import 'package:web85/views/home-views/tablet-view/tablet-view-home.dart';
-import 'contact-me.dart';
-import 'featured-projects.dart';
 
 class AboutMeTablet extends StatefulWidget {
   const AboutMeTablet({super.key});
@@ -16,7 +15,6 @@ class _AboutMeTabletState extends State<AboutMeTablet> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
@@ -77,8 +75,8 @@ class _AboutMeTabletState extends State<AboutMeTablet> {
               const SizedBox(height: 16),
               const Text(
                 "Hi, my name is Minahil Fatima, I am a Flutter Developer and Frontend Web Developer. "
-                    "I specialize in creating responsive, user-friendly web and mobile applications. "
-                    "I have honed my skills in building high-quality apps that deliver seamless experiences across platforms.",
+                "I specialize in creating responsive, user-friendly web and mobile applications. "
+                "I have honed my skills in building high-quality apps that deliver seamless experiences across platforms.",
                 style: TextStyle(
                   color: Colors.white70,
                   fontSize: 18,
@@ -88,62 +86,53 @@ class _AboutMeTabletState extends State<AboutMeTablet> {
               const SizedBox(height: 24),
               const SizedBox(height: 32),
 
-              // Adjusted row for tablet screen
-              width > 600 // Check if the screen width is larger than a tablet size
-                  ? SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildSkillCard(
-                      "Flutter Development",
-                      const Icon(Icons.code, color: Colors.white),
-                      const Color(0xFF7562E0),
-                    ),
-                    _buildSkillCard(
-                      "Frontend Development",
-                      const Icon(Icons.web, color: Colors.white),
-                      const Color(0xFF333645),
-                    ),
-                    _buildSkillCard(
-                      "Mobile Development",
-                      const Icon(Icons.phone_android, color: Colors.white),
-                      const Color(0xFF333645),
-                    ),
-                    _buildSkillCard(
-                      "Version Control",
-                      const Icon(Icons.design_services, color: Colors.white),
-                      const Color(0xFF333645),
-                    ),
-                  ],
+              // Responsive GridView for skill cards
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: width > 900
+                      ? 4 // Large screen: 4 columns
+                      : width > 600
+                          ? 3 // Medium screen: 3 columns
+                          : 2, // Small screen: 2 columns
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 1.2, // Adjust based on card size
                 ),
-              )
-                  : Column(
-                children: [
-                  _buildSkillCard(
-                    "Flutter Development",
-                    const Icon(Icons.code, color: Colors.white),
-                    const Color(0xFF7562E0),
-                  ),
-                  const SizedBox(height: 16),
-                  _buildSkillCard(
-                    "Frontend Development",
-                    const Icon(Icons.web, color: Colors.white),
-                    const Color(0xFF333645),
-                  ),
-                  const SizedBox(height: 16),
-                  _buildSkillCard(
-                    "Mobile Development",
-                    const Icon(Icons.phone_android, color: Colors.white),
-                    const Color(0xFF333645),
-                  ),
-                  const SizedBox(height: 16),
-                  _buildSkillCard(
-                    "Version Control",
-                    const Icon(Icons.design_services, color: Colors.white),
-                    const Color(0xFF333645),
-                  ),
-                ],
+                itemCount: 4, // Total skill cards
+                itemBuilder: (context, index) {
+                  final skillData = [
+                    {
+                      "title": "Flutter Development",
+                      "icon": const Icon(Icons.code, color: Colors.white),
+                      "color": const Color(0xFF7562E0),
+                    },
+                    {
+                      "title": "Frontend Development",
+                      "icon": const Icon(Icons.web, color: Colors.white),
+                      "color": const Color(0xFF333645),
+                    },
+                    {
+                      "title": "Mobile Development",
+                      "icon":
+                          const Icon(Icons.phone_android, color: Colors.white),
+                      "color": const Color(0xFF333645),
+                    },
+                    {
+                      "title": "Version Control",
+                      "icon": const Icon(Icons.design_services,
+                          color: Colors.white),
+                      "color": const Color(0xFF333645),
+                    },
+                  ][index];
+
+                  return _buildSkillCard(
+                    skillData["title"] as String,
+                    skillData["icon"] as Icon,
+                    skillData["color"] as Color,
+                  );
+                },
               ),
             ],
           ),
@@ -167,19 +156,20 @@ class _AboutMeTabletState extends State<AboutMeTablet> {
 
   Widget _buildSkillCard(String title, Icon icon, Color bgColor) {
     return Container(
-      padding: const EdgeInsets.all(46),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           icon,
           const SizedBox(height: 8),
           Text(
             title,
+            textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 16,

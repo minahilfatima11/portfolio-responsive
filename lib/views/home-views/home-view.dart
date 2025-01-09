@@ -12,12 +12,21 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final GlobalKey<State<HomeViewDesktop>> _desktopKey = GlobalKey();
+  final GlobalKey<State<HomeViewMobile>> _mobileKey = GlobalKey();
+  final GlobalKey<State<HomeViewTablet>> _tabletKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
-      desktop: HomeViewDesktop(),
-      mobile: HomeViewMobile(),
-      tablet: HomeViewTablet(),
+      desktop: HomeViewDesktop(
+        key: _desktopKey,
+      ),
+      mobile: HomeViewMobile(
+        key: _mobileKey,
+      ),
+      tablet: HomeViewTablet(
+        key: _tabletKey,
+      ),
     );
   }
 }

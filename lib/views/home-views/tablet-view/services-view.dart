@@ -5,7 +5,6 @@ import 'package:web85/views/home-views/tablet-view/tablet-view-home.dart';
 import 'about-me.dart';
 import 'contact-me.dart';
 
-
 class ServicesTablet extends StatelessWidget {
   const ServicesTablet({super.key});
 
@@ -74,7 +73,7 @@ class ServicesTablet extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: width * 0.1),
               child: const Text(
                 "We offer a wide range of services to cater to your needs, "
-                    "including Flutter development, frontend development, version control, and more.",
+                "including Flutter development, frontend development, version control, and more.",
                 style: TextStyle(
                   color: Colors.white70,
                   fontSize: 18,
@@ -87,24 +86,49 @@ class ServicesTablet extends StatelessWidget {
             Expanded(
               child: LayoutBuilder(
                 builder: (context, constraints) {
-                  // Detecting tablet size (between mobile and desktop)
-                  bool isTablet = constraints.maxWidth >= 600 && constraints.maxWidth < 1200;
+                  // Determine the number of columns based on screen width
+                  int crossAxisCount;
+                  double childAspectRatio;
+                  double fontSizeTitle;
+                  double fontSizeDescription;
+
+                  if (constraints.maxWidth >= 1200) {
+                    crossAxisCount = 3; // Desktop
+                    childAspectRatio = 1.2;
+                    fontSizeTitle = 18; // Adjust title size for desktop
+                    fontSizeDescription =
+                        14; // Adjust description size for desktop
+                  } else if (constraints.maxWidth >= 600) {
+                    crossAxisCount = 2; // Tablet
+                    childAspectRatio = 1.4;
+                    fontSizeTitle = 16; // Adjust title size for tablet
+                    fontSizeDescription =
+                        12; // Adjust description size for tablet
+                  } else {
+                    crossAxisCount = 1; // Small screens (mobile)
+                    childAspectRatio = 1.6;
+                    fontSizeTitle = 14; // Adjust title size for mobile
+                    fontSizeDescription =
+                        10; // Adjust description size for mobile
+                  }
 
                   return GridView.builder(
-                    padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: constraints.maxWidth * 0.1),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: isTablet ? 2 : 3, // 2 columns for tablets, 3 for desktops
+                      crossAxisCount: crossAxisCount,
                       crossAxisSpacing: 16,
                       mainAxisSpacing: 16,
-                      childAspectRatio: isTablet ? 1.4 : 1.2, // Adjusting aspect ratio for tablets
+                      childAspectRatio: childAspectRatio,
                     ),
                     itemCount: 3,
                     itemBuilder: (context, index) {
                       return Container(
+                        
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Color(0xFF7562E0)),
+                          border: Border.all(color: const Color(0xFF7562E0)),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.2),
@@ -119,14 +143,15 @@ class ServicesTablet extends StatelessWidget {
                             Icon(
                               getServiceIcon(index),
                               size: 40,
-                              color: Color(0xFF7562E0),
+                              color: const Color(0xFF7562E0),
                             ),
                             const SizedBox(height: 12),
                             Text(
                               getServiceName(index),
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize:
+                                    fontSizeTitle, // Adjusted for screen size
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.center,
@@ -136,9 +161,10 @@ class ServicesTablet extends StatelessWidget {
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 getServiceDescription(index),
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.white70,
-                                  fontSize: 14,
+                                  fontSize:
+                                      fontSizeDescription, // Adjusted for screen size
                                   height: 1.4,
                                 ),
                                 textAlign: TextAlign.center,

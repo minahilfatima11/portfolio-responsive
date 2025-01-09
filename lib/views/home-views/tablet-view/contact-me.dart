@@ -29,55 +29,53 @@ class ContactMeTablet extends StatelessWidget {
           _buildNavItem('Home', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomeViewTablet()), // Navigate to Home screen
+              MaterialPageRoute(builder: (context) => HomeViewTablet()),
             );
           }),
           _buildNavItem('About Me', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AboutMeTablet()), // Navigate to About Me screen
+              MaterialPageRoute(builder: (context) => AboutMeTablet()),
             );
           }),
           _buildNavItem('Services', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ServicesTablet()), // Navigate to Services screen
+              MaterialPageRoute(builder: (context) => ServicesTablet()),
             );
           }),
           _buildNavItem('Projects', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => FeaturedProjectsTablet()), // Navigate to Projects screen
+              MaterialPageRoute(builder: (context) => FeaturedProjectsTablet()),
             );
           }),
-          _buildNavItem('Contact', Color(0xFF7562E0), () {
-            // Already on Contact screen
-          }),
+          _buildNavItem('Contact', const Color(0xFF7562E0), () {}),
         ],
       ),
-      backgroundColor: const Color(0xFF0F0D1F), // Dark background
+      backgroundColor: const Color(0xFF0F0D1F),
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   'Contact me, let\'s make magic together:',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: screenWidth > 600 ? 28 : 22,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
-                const Text(
+                Text(
                   'Satisfied with me? Please contact me:',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: screenWidth > 600 ? 18 : 14,
                     color: Colors.grey,
                   ),
                   textAlign: TextAlign.center,
@@ -86,33 +84,13 @@ class ContactMeTablet extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButton(
-                      icon: const Icon(Icons.facebook, color: Colors.white, size: 30),
-                      onPressed: () {
-                        _launchURL('https://www.facebook.com/your-profile'); // Facebook URL
-                      },
-                    ),
+                    _buildSocialIcon(Icons.facebook, 'https://www.facebook.com/your-profile'),
                     const SizedBox(width: 16),
-                    IconButton(
-                      icon: const Icon(Icons.email, color: Colors.white, size: 30),
-                      onPressed: () {
-                        _launchURL('mailto:fminahil16343@gmail.com'); // Email URL
-                      },
-                    ),
+                    _buildSocialIcon(Icons.email, 'mailto:fminahil16343@gmail.com'),
                     const SizedBox(width: 16),
-                    IconButton(
-                      icon: const Icon(Icons.link, color: Colors.white, size: 30),
-                      onPressed: () {
-                        _launchURL('https://your-portfolio-link.com'); // Portfolio URL
-                      },
-                    ),
+                    _buildSocialIcon(Icons.link, 'https://your-portfolio-link.com'),
                     const SizedBox(width: 16),
-                    IconButton(
-                      icon: const Icon(FontAwesomeIcons.linkedin, color: Colors.white, size: 30), // LinkedIn icon
-                      onPressed: () {
-                        _launchURL('https://www.linkedin.com/in/your-profile'); // LinkedIn URL
-                      },
-                    ),
+                    _buildSocialIcon(FontAwesomeIcons.linkedin, 'https://www.linkedin.com/in/your-profile'),
                   ],
                 ),
                 const SizedBox(height: 30),
@@ -128,23 +106,22 @@ class ContactMeTablet extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Add your form submission logic here
                     print('Form submitted!');
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF7C5CF4), // Button color
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
+                    backgroundColor: const Color(0xFF7C5CF4),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.08,
                       vertical: 16,
                     ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: const Text(
+                  child: Text(
                     'Send',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: screenWidth > 600 ? 18 : 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -170,6 +147,15 @@ class ContactMeTablet extends StatelessWidget {
     );
   }
 
+  Widget _buildSocialIcon(IconData icon, String url) {
+    return IconButton(
+      icon: Icon(icon, color: Colors.white, size: 30),
+      onPressed: () {
+        _launchURL(url);
+      },
+    );
+  }
+
   Widget _buildTextField({
     required String hintText,
     required double screenWidth,
@@ -183,7 +169,7 @@ class ContactMeTablet extends StatelessWidget {
           hintText: hintText,
           hintStyle: const TextStyle(color: Colors.white70),
           filled: true,
-          fillColor: const Color(0xFF1C1833), // Dark field background
+          fillColor: const Color(0xFF1C1833),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
