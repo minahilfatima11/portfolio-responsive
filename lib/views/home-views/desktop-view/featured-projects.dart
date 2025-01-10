@@ -40,17 +40,13 @@ class FeaturedProjects extends StatelessWidget {
               MaterialPageRoute(builder: (context) => ServicesDesktop()), // Navigate to Services screen
             );
           }),
-          _buildNavItem('Projects', Color(0xFF7562E0), () {
-
-          }),
+          _buildNavItem('Projects', Color(0xFF7562E0), () {}),
           _buildNavItem('Contact', Colors.white, () {
-            // Already on Contact screen
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => ContactMeDesktop()), // Navigate to Projects screen
             );
           }),
-
         ],
       ),
       body: Padding(
@@ -78,18 +74,43 @@ class FeaturedProjects extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final projects = [
                     {
-                      'title': 'TWINDER',
+                      'title': 'Facebook Clone',
                       'description': 'A live Geolocation app for finding tweets and Twitter users around you.',
+                      'image': 'assets/twinder.png',
+                      'github': 'https://github.com/user/twinder',
                     },
                     {
-                      'title': 'LIVENTS',
+                      'title': 'Gold App',
                       'description': 'A video streaming app with live Geolocation for streaming events.',
+                      'image': 'assets/livents.png',
+                      'github': 'https://github.com/user/livents',
                     },
                     {
-                      'title': 'MOOVE',
+                      'title': 'TODO App',
                       'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
+                      'image': 'assets/moove.png',
+                      'github': 'https://github.com/user/moove',
+                    },
+                    {
+                      'title': 'Whatsapp Business Clone',
+                      'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
+                      'image': 'assets/moove.png',
+                      'github': 'https://github.com/user/moove',
+                    },
+                    {
+                      'title': 'Spiritual Counter',
+                      'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
+                      'image': 'assets/moove.png',
+                      'github': 'https://github.com/user/moove',
+                    },
+                    {
+                      'title': 'Even Odd Checker',
+                      'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
+                      'image': 'assets/moove.png',
+                      'github': 'https://github.com/user/moove',
                     },
                   ];
+
                   return Card(
                     color: const Color(0xFF1C1833),
                     shape: RoundedRectangleBorder(
@@ -100,6 +121,16 @@ class FeaturedProjects extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.asset(
+                              projects[index]['image']!,
+                              height: 150,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          const SizedBox(height: 12),
                           Text(
                             projects[index]['title']!,
                             style: const TextStyle(
@@ -121,14 +152,20 @@ class FeaturedProjects extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  // Link to live project
+                                  // You can open a URL using url_launcher package
+                                },
                                 child: const Text('View Live'),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF7C5CF4),
                                 ),
                               ),
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  // Open the specific GitHub repo
+                                  _launchURL(projects[index]['github']!);
+                                },
                                 child: const Text('GitHub Repo'),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF7C5CF4),
@@ -148,7 +185,19 @@ class FeaturedProjects extends StatelessWidget {
       ),
     );
   }
+
+  // Function to open GitHub link
+  _launchURL(String url) async {
+    // You need to add url_launcher package to your pubspec.yaml file to open URLs
+    // final Uri _url = Uri.parse(url);
+    // if (await canLaunch(_url.toString())) {
+    //   await launch(_url.toString());
+    // } else {
+    //   throw 'Could not launch $url';
+    // }
+  }
 }
+
 Widget _buildNavItem(String title, Color color, VoidCallback onTap) {
   return GestureDetector(
     onTap: onTap,
