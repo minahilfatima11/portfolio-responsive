@@ -79,7 +79,7 @@ class FeaturedProjects extends StatelessWidget {
                       'description': 'A social media platform clone with authentication, posts, comments, and live chat functionality.',
                       'image': 'assets/fb_clone.png',
                       'github': 'https://github.com/minahilfatima11/facebook_clone',
-                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_facebook-clone-activity-xxxxxxx', // LinkedIn post URL for the project
+                      'linkedin': 'https://www.linkedin.com/posts/minahil-fatima-6011b428b_flutter-dart-mobileappdevelopment-activity-7271381284977823745--AXf?utm_source=share&utm_medium=member_desktop', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'Gold App',
