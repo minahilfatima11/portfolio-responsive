@@ -5,7 +5,6 @@ import 'package:web85/views/home-views/tablet-view/tablet-view-home.dart';
 import 'contact-me.dart';
 import 'featured-projects.dart';
 
-
 class AboutMeTablet extends StatefulWidget {
   const AboutMeTablet({super.key});
 
@@ -87,34 +86,37 @@ class _AboutMeTabletState extends State<AboutMeTablet> {
                 ),
               ),
               const SizedBox(height: 24),
-
               const SizedBox(height: 32),
+
               // Adjusted row for tablet screen
               width > 600 // Check if the screen width is larger than a tablet size
-                  ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _buildSkillCard(
-                    "Flutter Development",
-                    const Icon(Icons.code, color: Colors.white),
-                    const Color(0xFF7562E0),
-                  ),
-                  _buildSkillCard(
-                    "Frontend Development",
-                    const Icon(Icons.web, color: Colors.white),
-                    const Color(0xFF333645),
-                  ),
-                  _buildSkillCard(
-                    "Mobile Development",
-                    const Icon(Icons.phone_android, color: Colors.white),
-                    const Color(0xFF333645),
-                  ),
-                  _buildSkillCard(
-                    "Version Control",
-                    const Icon(Icons.design_services, color: Colors.white),
-                    const Color(0xFF333645),
-                  ),
-                ],
+                  ? SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _buildSkillCard(
+                      "Flutter Development",
+                      const Icon(Icons.code, color: Colors.white),
+                      const Color(0xFF7562E0),
+                    ),
+                    _buildSkillCard(
+                      "Frontend Development",
+                      const Icon(Icons.web, color: Colors.white),
+                      const Color(0xFF333645),
+                    ),
+                    _buildSkillCard(
+                      "Mobile Development",
+                      const Icon(Icons.phone_android, color: Colors.white),
+                      const Color(0xFF333645),
+                    ),
+                    _buildSkillCard(
+                      "Version Control",
+                      const Icon(Icons.design_services, color: Colors.white),
+                      const Color(0xFF333645),
+                    ),
+                  ],
+                ),
               )
                   : Column(
                 children: [

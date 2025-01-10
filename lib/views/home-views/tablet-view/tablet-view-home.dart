@@ -128,6 +128,22 @@ class _HomeViewTabletState extends State<HomeViewTablet> {
           child: Column(
             children: [
               // Left Section
+              SizedBox(height: 30,),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+                child: Container(
+                  height: height * 0.4,
+                  width: height * 0.4,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff7562E0),
+                    shape: BoxShape.circle,
+                    image: const DecorationImage(
+                      image: AssetImage('assets/profile.jpg'), // Replace with your image path
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: height * 0.05),
                 child: Column(
@@ -208,21 +224,7 @@ class _HomeViewTabletState extends State<HomeViewTablet> {
                 ),
               ),
               // Right Section
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                child: Container(
-                  height: height * 0.4,
-                  width: height * 0.4,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff7562E0),
-                    shape: BoxShape.circle,
-                    image: const DecorationImage(
-                      image: AssetImage('assets/profile.jpg'), // Replace with your image path
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
+
             ],
           ),
         ),
