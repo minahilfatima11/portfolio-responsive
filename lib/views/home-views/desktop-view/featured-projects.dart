@@ -25,26 +25,26 @@ class FeaturedProjects extends StatelessWidget {
           _buildNavItem('Home', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomeViewDesktop()), // Navigate to Home screen
+              MaterialPageRoute(builder: (context) => HomeViewDesktop()),
             );
           }),
           _buildNavItem('About Me', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AboutMeDesktop()), // Navigate to About Me screen
+              MaterialPageRoute(builder: (context) => AboutMeDesktop()),
             );
           }),
           _buildNavItem('Services', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ServicesDesktop()), // Navigate to Services screen
+              MaterialPageRoute(builder: (context) => ServicesDesktop()),
             );
           }),
           _buildNavItem('Projects', Color(0xFF7562E0), () {}),
           _buildNavItem('Contact', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ContactMeDesktop()), // Navigate to Projects screen
+              MaterialPageRoute(builder: (context) => ContactMeDesktop()),
             );
           }),
         ],
@@ -70,44 +70,44 @@ class FeaturedProjects extends StatelessWidget {
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                 ),
-                itemCount: 3,
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   final projects = [
                     {
                       'title': 'Facebook Clone',
-                      'description': 'A live Geolocation app for finding tweets and Twitter users around you.',
-                      'image': 'assets/twinder.png',
-                      'github': 'https://github.com/user/twinder',
+                      'description': 'A social media platform clone with authentication, posts, comments, and live chat functionality.',
+                      'image': 'assets/facebook_clone.png',
+                      'github': 'https://github.com/minahilfatima11/facebook_clone',
                     },
                     {
                       'title': 'Gold App',
-                      'description': 'A video streaming app with live Geolocation for streaming events.',
-                      'image': 'assets/livents.png',
-                      'github': 'https://github.com/user/livents',
+                      'description': 'A video streaming app where users can stream live events and access video content from multiple genres.',
+                      'image': 'assets/gold_app.png',
+                      'github': 'https://github.com/minahilfatima11/gold-shop-app',
                     },
                     {
                       'title': 'TODO App',
-                      'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
-                      'image': 'assets/moove.png',
-                      'github': 'https://github.com/user/moove',
+                      'description': 'A task management app with features to create, update, and manage daily tasks with reminders.',
+                      'image': 'assets/todo_app.png',
+                      'github': 'https://github.com/minahilfatima11/todo_app',
                     },
                     {
                       'title': 'Whatsapp Business Clone',
-                      'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
-                      'image': 'assets/moove.png',
-                      'github': 'https://github.com/user/moove',
+                      'description': 'A messaging app clone designed for business communication, featuring multiple chat channels and business profiles.',
+                      'image': 'assets/whatsapp_business_clone.png',
+                      'github': 'https://github.com/user/whatsapp_business_clone',
                     },
                     {
                       'title': 'Spiritual Counter',
-                      'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
-                      'image': 'assets/moove.png',
-                      'github': 'https://github.com/user/moove',
+                      'description': 'A spiritual app to help users count their recitations and keep track of their spiritual journey.',
+                      'image': 'assets/spiritual_counter.png',
+                      'github': 'https://github.com/minahilfatima11/spiritual_counter',
                     },
                     {
                       'title': 'Even Odd Checker',
-                      'description': 'Mobile app for booking instant pickup & dropoff across major cities.',
-                      'image': 'assets/moove.png',
-                      'github': 'https://github.com/user/moove',
+                      'description': 'A simple app that allows users to check whether a number is even or odd.',
+                      'image': 'assets/even_odd_checker.png',
+                      'github': 'https://github.com/user/even_odd_checker',
                     },
                   ];
 
@@ -153,8 +153,7 @@ class FeaturedProjects extends StatelessWidget {
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  // Link to live project
-                                  // You can open a URL using url_launcher package
+                                  // You can add a URL launcher here to open a live project
                                 },
                                 child: const Text('View Live'),
                                 style: ElevatedButton.styleFrom(
@@ -188,7 +187,7 @@ class FeaturedProjects extends StatelessWidget {
 
   // Function to open GitHub link
   _launchURL(String url) async {
-    // You need to add url_launcher package to your pubspec.yaml file to open URLs
+    //You need to add url_launcher package to your pubspec.yaml file to open URLs
     // final Uri _url = Uri.parse(url);
     // if (await canLaunch(_url.toString())) {
     //   await launch(_url.toString());
