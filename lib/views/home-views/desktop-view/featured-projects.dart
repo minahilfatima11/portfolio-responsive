@@ -95,7 +95,7 @@ class FeaturedProjects extends StatelessWidget {
                       'title': 'Whatsapp Business Clone',
                       'description': 'A messaging app clone designed for business communication, featuring multiple chat channels and business profiles.',
                       'image': 'assets/whatsapp_business_clone.png',
-                      'github': 'https://github.com/user/whatsapp_business_clone',
+                      'github': 'https://github.com/minahilfatima11/whatsapp-business-clone',
                     },
                     {
                       'title': 'Spiritual Counter',
@@ -107,7 +107,7 @@ class FeaturedProjects extends StatelessWidget {
                       'title': 'Even Odd Checker',
                       'description': 'A simple app that allows users to check whether a number is even or odd.',
                       'image': 'assets/even_odd_checker.png',
-                      'github': 'https://github.com/user/even_odd_checker',
+                      'github': 'https://github.com/minahilfatima11/even-odd-checker',
                     },
                   ];
 
