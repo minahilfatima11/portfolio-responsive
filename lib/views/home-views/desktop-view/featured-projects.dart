@@ -93,7 +93,7 @@ class FeaturedProjects extends StatelessWidget {
                       'description': 'A task management app with features to create, update, and manage daily tasks with reminders.',
                       'image': 'assets/todo.jpeg',
                       'github': 'https://github.com/minahilfatima11/todo_app',
-                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_todo-app-activity-xxxxxxx', // LinkedIn post URL for the project
+                      'linkedin': 'https://www.linkedin.com/posts/minahil-fatima-6011b428b_flutter-todoapp-firebase-activity-7280534384988897280-Qwg2?utm_source=share&utm_medium=member_desktop', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'Whatsapp Business Clone',
