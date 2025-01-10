@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:web85/views/home-views/desktop-view/contact-me.dart';
 import 'package:web85/views/home-views/desktop-view/services-view.dart';
+import 'package:url_launcher/url_launcher.dart';  // Import url_launcher
 
 import 'about-me.dart';
 import 'home-view.dart';
@@ -78,36 +79,42 @@ class FeaturedProjects extends StatelessWidget {
                       'description': 'A social media platform clone with authentication, posts, comments, and live chat functionality.',
                       'image': 'assets/fb_clone.png',
                       'github': 'https://github.com/minahilfatima11/facebook_clone',
+                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_facebook-clone-activity-xxxxxxx', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'Gold App',
                       'description': 'A video streaming app where users can stream live events and access video content from multiple genres.',
-                      'image': 'assets/gold_app.png',
+                      'image': 'assets/gold_app.jpg',
                       'github': 'https://github.com/minahilfatima11/gold-shop-app',
+                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_gold-app-activity-xxxxxxx', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'TODO App',
                       'description': 'A task management app with features to create, update, and manage daily tasks with reminders.',
                       'image': 'assets/todo.jpeg',
                       'github': 'https://github.com/minahilfatima11/todo_app',
+                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_todo-app-activity-xxxxxxx', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'Whatsapp Business Clone',
                       'description': 'A messaging app clone designed for business communication, featuring multiple chat channels and business profiles.',
-                      'image': 'assets/whatsapp_business_clone.png',
+                      'image': 'assets/WA.jpeg',
                       'github': 'https://github.com/minahilfatima11/whatsapp-business-clone',
+                      'linkedin': 'https://www.linkedin.com/posts/minahil-fatima-6011b428b_flutterdevelopment-dartprogramming-userinterface-activity-7283029451167195136-bdP0?utm_source=share&utm_medium=member_desktop', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'Spiritual Counter',
                       'description': 'A spiritual app to help users count their recitations and keep track of their spiritual journey.',
-                      'image': 'assets/spiritual_counter.png',
+                      'image': 'assets/counter.png',
                       'github': 'https://github.com/minahilfatima11/spiritual_counter',
+                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_spiritual-counter-activity-xxxxxxx', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'Even Odd Checker',
                       'description': 'A simple app that allows users to check whether a number is even or odd.',
-                      'image': 'assets/even_odd_checker.png',
+                      'image': 'assets/evenoddjpg.jpg',
                       'github': 'https://github.com/minahilfatima11/even-odd-checker',
+                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_even-odd-checker-activity-xxxxxxx', // LinkedIn post URL for the project
                     },
                   ];
 
@@ -160,12 +167,12 @@ class FeaturedProjects extends StatelessWidget {
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  // You can add a URL launcher here to open a live project
+                                  // Open the specific LinkedIn post for the project
+                                  _launchURL(projects[index]['linkedin']!);
                                 },
                                 child: const Text('View Live' , style: TextStyle(color: Colors.white),),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF7C5CF4),
-
                                 ),
                               ),
                               ElevatedButton(
@@ -173,7 +180,7 @@ class FeaturedProjects extends StatelessWidget {
                                   // Open the specific GitHub repo
                                   _launchURL(projects[index]['github']!);
                                 },
-                                child: const Text('GitHub Repo',style: TextStyle(color:Colors.white),),
+                                child: const Text('GitHub Repo', style: TextStyle(color: Colors.white),),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF7C5CF4),
                                 ),
@@ -193,15 +200,14 @@ class FeaturedProjects extends StatelessWidget {
     );
   }
 
-  // Function to open GitHub link
+  // Function to open URLs
   _launchURL(String url) async {
-    // You need to add url_launcher package to your pubspec.yaml file to open URLs
-    // final Uri _url = Uri.parse(url);
-    // if (await canLaunch(_url.toString())) {
-    //   await launch(_url.toString());
-    // } else {
-    //   throw 'Could not launch $url';
-    // }
+    final Uri _url = Uri.parse(url);
+    if (await canLaunch(_url.toString())) {
+      await launch(_url.toString());
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
 

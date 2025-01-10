@@ -79,7 +79,9 @@ class _AboutMeDesktopState extends State<AboutMeDesktop> {
             ),
             const SizedBox(height: 16),
             const Text(
-              "Hi, my name is Minahil Fatima, I am a Fullstack Web Developer, UI Designer, and Mobile Developer. I have honed my skills in Web Development and have a strong understanding of advanced UI design principles.",
+              "Hi, my name is Minahil Fatima, I am a Flutter Developer and Frontend Web Developer. "
+                  "I specialize in creating responsive, user-friendly web and mobile applications. "
+                  "I have honed my skills in building high-quality apps that deliver seamless experiences across platforms.",
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: 18,
