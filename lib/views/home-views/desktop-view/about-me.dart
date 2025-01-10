@@ -89,40 +89,19 @@ class _AboutMeDesktopState extends State<AboutMeDesktop> {
               ),
             ),
             const SizedBox(height: 24),
-            Row(
-              children: [
-                Text(
-                  "1+",
-                  style: TextStyle(
-                    color: Color(0xFF7562E0),
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: const Text(
-                    "Years of experience. Specialized in building apps while ensuring a seamless web experience for end users.",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 18,
-                      height: 1.5,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+
             const SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _buildSkillCard(
-                  "UI & UX Designing",
-                  const Icon(Icons.design_services, color: Colors.white),
+                  "Flutter Development",
+                  const Icon(Icons.code, color: Colors.white),
                   const Color(0xFF7562E0),
+
                 ),
                 _buildSkillCard(
-                  "Web Development",
+                  "Frontend Development",
                   const Icon(Icons.web, color: Colors.white),
                   const Color(0xFF333645),
                 ),
@@ -131,9 +110,10 @@ class _AboutMeDesktopState extends State<AboutMeDesktop> {
                   const Icon(Icons.phone_android, color: Colors.white),
                   const Color(0xFF333645),
                 ),
+
                 _buildSkillCard(
-                  "Flutter Development",
-                  const Icon(Icons.code, color: Colors.white),
+                  "Version Control",
+                  const Icon(Icons.design_services, color: Colors.white),
                   const Color(0xFF333645),
                 ),
               ],
