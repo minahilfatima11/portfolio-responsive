@@ -86,7 +86,7 @@ class FeaturedProjects extends StatelessWidget {
                       'description': 'A video streaming app where users can stream live events and access video content from multiple genres.',
                       'image': 'assets/gold_app.jpg',
                       'github': 'https://github.com/minahilfatima11/gold-shop-app',
-                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_gold-app-activity-xxxxxxx', // LinkedIn post URL for the project
+                      'linkedin': 'https://www.linkedin.com/posts/minahil-fatima-6011b428b_goldshopapp-frontenddevelopment-innovation-activity-7275441770514034689-7WSJ?utm_source=share&utm_medium=member_desktop', // LinkedIn post URL for the project
                     },
                     {
                       'title': 'TODO App',
