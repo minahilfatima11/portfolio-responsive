@@ -76,7 +76,7 @@ class FeaturedProjects extends StatelessWidget {
                     {
                       'title': 'Facebook Clone',
                       'description': 'A social media platform clone with authentication, posts, comments, and live chat functionality.',
-                      'image': 'assets/facebook_clone.png',
+                      'image': 'assets/fb_clone.png',
                       'github': 'https://github.com/minahilfatima11/facebook_clone',
                     },
                     {
@@ -88,7 +88,7 @@ class FeaturedProjects extends StatelessWidget {
                     {
                       'title': 'TODO App',
                       'description': 'A task management app with features to create, update, and manage daily tasks with reminders.',
-                      'image': 'assets/todo_app.png',
+                      'image': 'assets/todo.jpeg',
                       'github': 'https://github.com/minahilfatima11/todo_app',
                     },
                     {
@@ -121,43 +121,51 @@ class FeaturedProjects extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              projects[index]['image']!,
-                              height: 150,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
                           const SizedBox(height: 12),
-                          Text(
-                            projects[index]['title']!,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                          Center(
+                            child: Text(
+                              projects[index]['title']!,
+                              style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 8),
-                          Text(
-                            projects[index]['description']!,
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey,
+                          Center(
+                            child: Text(
+                              projects[index]['description']!,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          Center(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                projects[index]['image']!,
+                                height: 200,
+                                width: 200,  // Adjust width to take up full space in the card
+                                fit: BoxFit.cover,  // Ensure the image covers the area
+                              ),
                             ),
                           ),
                           const Spacer(),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               ElevatedButton(
                                 onPressed: () {
                                   // You can add a URL launcher here to open a live project
                                 },
-                                child: const Text('View Live'),
+                                child: const Text('View Live' , style: TextStyle(color: Colors.white),),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF7C5CF4),
+
                                 ),
                               ),
                               ElevatedButton(
@@ -165,7 +173,7 @@ class FeaturedProjects extends StatelessWidget {
                                   // Open the specific GitHub repo
                                   _launchURL(projects[index]['github']!);
                                 },
-                                child: const Text('GitHub Repo'),
+                                child: const Text('GitHub Repo',style: TextStyle(color:Colors.white),),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF7C5CF4),
                                 ),
@@ -187,7 +195,7 @@ class FeaturedProjects extends StatelessWidget {
 
   // Function to open GitHub link
   _launchURL(String url) async {
-    //You need to add url_launcher package to your pubspec.yaml file to open URLs
+    // You need to add url_launcher package to your pubspec.yaml file to open URLs
     // final Uri _url = Uri.parse(url);
     // if (await canLaunch(_url.toString())) {
     //   await launch(_url.toString());
