@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:web85/views/home-views/tablet-view/services-view.dart';
 import 'package:web85/views/home-views/tablet-view/tablet-view-home.dart';
 
 import 'about-me.dart';
@@ -40,7 +41,7 @@ class ContactMeTablet extends StatelessWidget {
           _buildNavItem('Services', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ServicesDesktop()), // Navigate to Services screen
+              MaterialPageRoute(builder: (context) => ServicesTablet()), // Navigate to Services screen
             );
           }),
           _buildNavItem('Projects', Colors.white, () {

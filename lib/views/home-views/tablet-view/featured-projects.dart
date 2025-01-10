@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:web85/views/home-views/desktop-view/contact-me.dart';
 import 'package:web85/views/home-views/desktop-view/services-view.dart';
 import 'package:web85/views/home-views/tablet-view/contact-me.dart';
+import 'package:web85/views/home-views/tablet-view/services-view.dart';
 import 'package:web85/views/home-views/tablet-view/tablet-view-home.dart';
 
 import 'about-me.dart';
@@ -41,7 +42,7 @@ class FeaturedProjectsTablet extends StatelessWidget {
           _buildNavItem('Services', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ServicesDesktop()),
+              MaterialPageRoute(builder: (context) => ServicesTablet()),
             );
           }),
           _buildNavItem('Projects', Color(0xFF7562E0), () {}),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web85/views/home-views/desktop-view/services-view.dart';
+import 'package:web85/views/home-views/tablet-view/services-view.dart';
 import 'package:web85/views/home-views/tablet-view/tablet-view-home.dart';
 import 'contact-me.dart';
 import 'featured-projects.dart';
@@ -39,7 +40,7 @@ class _AboutMeTabletState extends State<AboutMeTablet> {
           _buildNavItem('Services', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ServicesDesktop()),
+              MaterialPageRoute(builder: (context) => ServicesTablet()),
             );
           }),
           _buildNavItem('Projects', Colors.white, () {
