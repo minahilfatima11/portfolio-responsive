@@ -46,7 +46,7 @@ class ContactMeTablet extends StatelessWidget {
           _buildNavItem('Projects', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => FeaturedProjects()), // Navigate to Projects screen
+              MaterialPageRoute(builder: (context) => FeaturedProjectsTablet()), // Navigate to Projects screen
             );
           }),
           _buildNavItem('Contact', Color(0xFF7562E0), () {

@@ -45,13 +45,13 @@ class _AboutMeTabletState extends State<AboutMeTablet> {
           _buildNavItem('Projects', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => FeaturedProjects()),
+              MaterialPageRoute(builder: (context) => FeaturedProjectsTablet()),
             );
           }),
           _buildNavItem('Contact', Colors.white, () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ContactMeDesktop()),
+              MaterialPageRoute(builder: (context) => ContactMeTablet()),
             );
           }),
         ],
