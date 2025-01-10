@@ -114,7 +114,7 @@ class FeaturedProjects extends StatelessWidget {
                       'description': 'A simple app that allows users to check whether a number is even or odd.',
                       'image': 'assets/evenoddjpg.jpg',
                       'github': 'https://github.com/minahilfatima11/even-odd-checker',
-                      'linkedin': 'https://www.linkedin.com/posts/minahilfatima11_even-odd-checker-activity-xxxxxxx', // LinkedIn post URL for the project
+                      'linkedin': 'https://www.linkedin.com/posts/minahil-fatima-6011b428b_flutter-dart-mobileappdevelopment-activity-7275758822323838976-XYKT?utm_source=share&utm_medium=member_desktop', // LinkedIn post URL for the project
                     },
                   ];
 
