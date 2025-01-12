@@ -52,7 +52,6 @@ class ContactMeDesktop extends StatelessWidget {
           _buildNavItem('Contact', Color(0xFF7562E0), () {
             // Already on Contact screen
           }),
-
         ],
       ),
       backgroundColor: const Color(0xFF0F0D1F), // Dark background
@@ -86,10 +85,11 @@ class ContactMeDesktop extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // Replaced Facebook icon with WhatsApp
                     IconButton(
-                      icon: const Icon(Icons.facebook, color: Colors.white, size: 30),
+                      icon: const Icon(FontAwesomeIcons.whatsapp, color: Colors.white, size: 30), // WhatsApp icon
                       onPressed: () {
-                        _launchURL('https://www.facebook.com/your-profile'); // Facebook URL
+                        _launchURL('https://wa.me/923085588200'); // WhatsApp number link
                       },
                     ),
                     const SizedBox(width: 16),
@@ -202,5 +202,3 @@ class ContactMeDesktop extends StatelessWidget {
     }
   }
 }
-
-

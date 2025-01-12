@@ -71,12 +71,12 @@ class _ServicesDesktopState extends State<ServicesDesktop> {
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),
-            ),
+            ),g
             const SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.1),
               child: const Text(
-                "We offer a wide range of services to cater to your needs, "
+                "I offer a wide range of services to cater to your needs, "
                     "including Flutter development, frontend development, version control, and more.",
                 style: TextStyle(
                   color: Colors.white70,
