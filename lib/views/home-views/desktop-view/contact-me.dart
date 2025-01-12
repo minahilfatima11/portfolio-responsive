@@ -16,6 +16,7 @@ class ContactMeDesktop extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFF181824),
         title: const Text(
           "M.Fatima",
@@ -81,40 +82,6 @@ class ContactMeDesktop extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Replaced Facebook icon with WhatsApp
-                    IconButton(
-                      icon: const Icon(FontAwesomeIcons.whatsapp, color: Colors.white, size: 30), // WhatsApp icon
-                      onPressed: () {
-                        _launchURL('https://wa.me/923085588200'); // WhatsApp number link
-                      },
-                    ),
-                    const SizedBox(width: 16),
-                    IconButton(
-                      icon: const Icon(Icons.email, color: Colors.white, size: 30),
-                      onPressed: () {
-                        _launchURL('mailto:fminahil16343@gmail.com'); // Email URL
-                      },
-                    ),
-                    const SizedBox(width: 16),
-                    IconButton(
-                      icon: const Icon(Icons.link, color: Colors.white, size: 30),
-                      onPressed: () {
-                        _launchURL('https://your-portfolio-link.com'); // Portfolio URL
-                      },
-                    ),
-                    const SizedBox(width: 16),
-                    IconButton(
-                      icon: const Icon(FontAwesomeIcons.linkedin, color: Colors.white, size: 30), // LinkedIn icon
-                      onPressed: () {
-                        _launchURL('https://www.linkedin.com/in/your-profile'); // LinkedIn URL
-                      },
-                    ),
-                  ],
-                ),
                 const SizedBox(height: 30),
                 _buildTextField(hintText: 'Name', screenWidth: screenWidth),
                 const SizedBox(height: 16),
@@ -145,12 +112,50 @@ class ContactMeDesktop extends StatelessWidget {
                     'Send',
                     style: TextStyle(
                       fontSize: 16,
+                      color : Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Replaced Facebook icon with WhatsApp
+                    IconButton(
+                      icon: const Icon(FontAwesomeIcons.whatsapp, color: Colors.white, size: 30), // WhatsApp icon
+                      onPressed: () {
+                        _launchURL('https://wa.me/923085588200'); // WhatsApp number link
+                      },
+                    ),
+                    const SizedBox(width: 16),
+                    IconButton(
+                      icon: const Icon(Icons.email, color: Colors.white, size: 30),
+                      onPressed: () {
+                        _launchURL('mailto:fminahil16343@gmail.com'); // Email URL
+                      },
+                    ),
+                    const SizedBox(width: 16),
+                    IconButton(
+                      icon: const Icon(FontAwesomeIcons.github, color: Colors.white, size: 30),
+                      onPressed: () {
+                        _launchURL('https://github.com/minahilfatima11'); // Portfolio URL
+                      },
+                    ),
+                    const SizedBox(width: 16),
+                    IconButton(
+                      icon: const Icon(FontAwesomeIcons.linkedin, color: Colors.white, size: 30), // LinkedIn icon
+                      onPressed: () {
+                        _launchURL('https://www.linkedin.com/in/your-profile'); // LinkedIn URL
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 30),
               ],
+
             ),
+
           ),
         ),
       ),

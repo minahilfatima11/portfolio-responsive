@@ -92,8 +92,7 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    "Freelance UI Designer, Fullstack Developer, & Data Analyst. "
-                        "I create seamless web experiences for end-users.",
+                    "A Flutter Developer & Frontend Developer, crafting seamless mobile & web experiences with a focus on performance, design, and user engagement.",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 18,
@@ -150,28 +149,32 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
             ),
             // Right Section
             Container(
-              height: height * 0.3,
-              width: height * 0.3,
-              decoration: BoxDecoration(
-                color: const Color(0xff7562E0),
-                shape: BoxShape.circle,
-                image: const DecorationImage(
-                  image: AssetImage('assets/profile.jpg'),
-                  fit: BoxFit.cover,
-                ),
-                border: Border.all(
-                  color: Color(0xff7562E0), // Border color
-                  width: 5, // Border width
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.3),
-                    blurRadius: 20,
-                    offset: Offset(0, 8), // Shadow position
+              width: width * 0.5,
+              alignment: Alignment.center,
+              child: Container(
+                height: height * 0.5,
+                width: height * 0.5,
+                decoration: BoxDecoration(
+                  color: const Color(0xff7562E0),
+                  shape: BoxShape.circle,
+                  image: const DecorationImage(
+                    image: AssetImage('assets/profile.jpg'),
+                    fit: BoxFit.cover,
                   ),
-                ],
+                  border: Border.all(
+                    color: Color(0xff7562E0), // Border color
+                    width: 5, // Border width
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 20,
+                      offset: Offset(0, 8), // Shadow position
+                    ),
+                  ],
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),
