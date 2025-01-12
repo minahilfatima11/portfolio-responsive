@@ -62,7 +62,9 @@ class _AboutMeMobileState extends State<AboutMeMobile> with SingleTickerProvider
         actions: [
           IconButton(
             icon: const Icon(Icons.menu, color: Colors.white),
-            onPressed: _toggleMenu,
+            onPressed: () {
+              showMenuFromTopLeft(context);
+            },
           ),
         ],
       ),
@@ -152,28 +154,30 @@ class _AboutMeMobileState extends State<AboutMeMobile> with SingleTickerProvider
   }
 
   Widget _buildSkillCard(String title, Icon icon, Color bgColor) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Row(
-        children: [
-          icon,
-          const SizedBox(width: 16),
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+    return Center(
+      child: Container(
+        width: 300,
+        padding: const EdgeInsets.all(30),
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          children: [
+            icon,
+            const SizedBox(width: 16),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -209,6 +213,59 @@ class _AboutMeMobileState extends State<AboutMeMobile> with SingleTickerProvider
           );
         }),
       ],
+    );
+  }
+
+  void showMenuFromTopLeft(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Align(
+          alignment: Alignment.topLeft,
+          child: Material(
+            color: const Color(0xFF1E1E2A),
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: MediaQuery.of(context).size.height,
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildNavItem('Home', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeViewMobile()),
+                    );
+                  }),
+                  _buildNavItem('About Me', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AboutMeMobile()),
+                    );
+                  }),
+                  _buildNavItem('Services', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ServicesViewMobile()),
+                    );
+                  }),
+                  _buildNavItem('Projects', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => FeaturedProjectsMobile()),
+                    );
+                  }),
+                  _buildNavItem('Contact', () {
+                    // Add functionality if needed
+                  }),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 
