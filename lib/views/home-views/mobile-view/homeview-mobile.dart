@@ -22,6 +22,7 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFF181824),
         title: const Text(
           "M.Fatima",
