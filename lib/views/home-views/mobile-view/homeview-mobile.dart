@@ -30,55 +30,16 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
             fontSize: 20,
           ),
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {
-            _scaffoldKey.currentState?.openDrawer();
-          },
-        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              showMenuFromTopLeft(context);
+            },
+          ),
+        ],
       ),
-      drawer: Drawer(
-        backgroundColor: const Color(0xFF1E1E2A),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Color(0xFF181824),
-              ),
-              child: const Text(
-                'Menu',
-                style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-            ),
-            _buildDrawerItem('Home', () {}),
-            _buildDrawerItem('About Me', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AboutMeMobile()),
-              );
-            }),
-            _buildDrawerItem('Services', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ServicesViewMobile()),
-              );
-            }),
-            _buildDrawerItem('Projects', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => FeaturedProjectsMobile()),
-              );
-            }),
-            _buildDrawerItem('Contact', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ContactMeMobile()),
-              );
-            }),
-          ],
-        ),
-      ),
+
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -202,4 +163,66 @@ class _HomeViewMobileState extends State<HomeViewMobile> {
       onTap: onTap,
     );
   }
+}
+void showMenuFromTopLeft(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return Align(
+        alignment: Alignment.topLeft,
+        child: Material(
+          color: const Color(0xFF1E1E2A),
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.7,
+            height: MediaQuery.of(context).size.height,
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildNavItem('Home', () {
+
+                }),
+                _buildNavItem('About Me', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AboutMeMobile()),
+                  );
+                }),
+                _buildNavItem('Services', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ServicesViewMobile()),
+                  );
+                }),
+                _buildNavItem('Projects', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FeaturedProjectsMobile()),
+                  );
+                }),
+                _buildNavItem('Contact', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ContactMeMobile()),
+                  );
+                }),
+              ],
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
+
+Widget _buildNavItem(String title, VoidCallback onTap) {
+  return ListTile(
+    title: Text(
+      title,
+      style: const TextStyle(color: Colors.white, fontSize: 18),
+    ),
+    onTap: onTap,
+  );
 }

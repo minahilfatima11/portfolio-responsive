@@ -20,44 +20,19 @@ class FeaturedProjectsMobile extends StatelessWidget {
           "M.Fatima",
           style: TextStyle(
             color: Color(0xFF7562E0),
-            fontSize: 24,
+            fontSize: 20,
           ),
         ),
-        leading: Builder(
-          builder: (context) => IconButton(
+        actions: [
+          IconButton(
             icon: const Icon(Icons.menu, color: Colors.white),
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              showMenuFromTopLeft(context);
             },
           ),
-        ),
+        ],
       ),
-      drawer: Drawer(
-        child: Container(
-          color: const Color(0xFF181824),
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              DrawerHeader(
-                decoration: const BoxDecoration(
-                  color: Color(0xFF7562E0),
-                ),
-                child: const Text(
-                  'Menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-              _buildDrawerItem(context, 'Home', Icons.home, HomeViewMobile()),
-              _buildDrawerItem(context, 'About Me', Icons.person, AboutMeMobile()),
-              _buildDrawerItem(context, 'Services', Icons.design_services, ServicesViewMobile()),
-              _buildDrawerItem(context, 'Contact', Icons.contact_mail, ContactMeMobile()),
-            ],
-          ),
-        ),
-      ),
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -219,20 +194,66 @@ class FeaturedProjectsMobile extends StatelessWidget {
     }
   }
 
-  Widget _buildDrawerItem(BuildContext context, String title, IconData icon, Widget destination) {
-    return ListTile(
-      trailing: Icon(icon, color: Colors.white),
-      title: Text(
-        title,
-        style: const TextStyle(color: Colors.white),
-      ),
-      onTap: () {
-        Navigator.pop(context);
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => destination),
+  void showMenuFromTopLeft(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Align(
+          alignment: Alignment.topLeft,
+          child: Material(
+            color: const Color(0xFF1E1E2A),
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: MediaQuery.of(context).size.height,
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildNavItem('Home', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeViewMobile()),
+                    );
+                  }),
+                  _buildNavItem('About Me', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AboutMeMobile()),
+                    );
+                  }),
+                  _buildNavItem('Services', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ServicesViewMobile()),
+                    );
+                  }),
+                  _buildNavItem('Projects', () {
+
+                  }),
+                  _buildNavItem('Contact', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ContactMeMobile()),
+                    );
+                  }),
+                ],
+              ),
+            ),
+          ),
         );
       },
+    );
+  }
+
+  Widget _buildNavItem(String title, VoidCallback onTap) {
+    return ListTile(
+      title: Text(
+        title,
+        style: const TextStyle(color: Colors.white, fontSize: 18),
+      ),
+      onTap: onTap,
     );
   }
 }

@@ -22,7 +22,7 @@ class _ServicesMobileState extends State<ServicesViewMobile> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF181824),
         title: const Text(
-          "Portfolio",
+          "M.Fatima",
           style: TextStyle(
             color: Color(0xFF7562E0),
             fontSize: 20,
@@ -58,7 +58,7 @@ class _ServicesMobileState extends State<ServicesViewMobile> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.1),
               child: const Text(
-                "We offer a wide range of services to cater to your needs, including Flutter development, frontend development, version control, and more.",
+                "I offer a wide range of services to cater to your needs, including Flutter development, frontend development, version control, and more.",
                 style: TextStyle(
                   color: Colors.white70,
                   fontSize: 16,

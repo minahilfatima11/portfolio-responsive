@@ -71,7 +71,7 @@ class _ServicesDesktopState extends State<ServicesDesktop> {
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),
-            ),g
+            ),
             const SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.1),
