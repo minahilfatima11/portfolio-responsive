@@ -11,7 +11,7 @@ class ServicesTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width * 0.05;
 
     return Scaffold(
       appBar: AppBar(
@@ -215,9 +215,9 @@ class ServicesTablet extends StatelessWidget {
       case 0:
         return "Building beautiful mobile apps with Flutter for Android and iOS.";
       case 1:
-        return "Creating responsive and interactive websites with modern frontend technologies.";
+        return "Creating responsive, interactive websites frontend technologies.";
       case 2:
-        return "Managing source code with Git and version control best practices.";
+        return "Managing source code Git, version control best practices.";
       default:
         return "Service description here.";
     }
