@@ -16,7 +16,7 @@ class FeaturedProjects extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF181824),
         title: const Text(
-          "Portfolio",
+          "M.Fatima",
           style: TextStyle(
             color: Color(0xFF7562E0),
             fontSize: 24,
