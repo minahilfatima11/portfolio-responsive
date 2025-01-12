@@ -44,7 +44,7 @@ class FeaturedProjectsMobile extends StatelessWidget {
               'Featured Projects:',
               style: TextStyle(
                 fontSize: 24,
-                color: Colors.white,
+                color: Color(0xFF7562E0),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -123,7 +123,7 @@ class FeaturedProjectsMobile extends StatelessWidget {
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                                    color: Color(0xFF7562E0),
                                   ),
                                 ),
                               ),

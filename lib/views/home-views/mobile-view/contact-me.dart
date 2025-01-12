@@ -49,7 +49,7 @@ class ContactMeMobile extends StatelessWidget {
                   'Contact me, let\'s make magic together:',
                   style: TextStyle(
                     fontSize: 24,
-                    color: Colors.white,
+                    color: Color(0xFF7562E0),
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,

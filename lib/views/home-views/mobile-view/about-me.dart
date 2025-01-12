@@ -83,7 +83,7 @@ class _AboutMeMobileState extends State<AboutMeMobile> with SingleTickerProvider
                   const Text(
                     "About Me:",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color(0xFF7562E0),
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
@@ -103,7 +103,7 @@ class _AboutMeMobileState extends State<AboutMeMobile> with SingleTickerProvider
                   const Text(
                     "Skills:",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color(0xFF7562E0),
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),

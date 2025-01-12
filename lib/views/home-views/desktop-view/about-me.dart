@@ -73,7 +73,7 @@ class _AboutMeDesktopState extends State<AboutMeDesktop> {
             const Text(
               "About Me:",
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFF7562E0),
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),
@@ -90,7 +90,14 @@ class _AboutMeDesktopState extends State<AboutMeDesktop> {
               ),
             ),
             const SizedBox(height: 24),
-
+            const Text(
+              "Skills:",
+              style: TextStyle(
+                color: Color(0xFF7562E0),
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

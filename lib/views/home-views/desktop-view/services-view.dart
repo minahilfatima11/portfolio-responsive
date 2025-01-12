@@ -68,7 +68,7 @@ class _ServicesDesktopState extends State<ServicesDesktop> {
             const Text(
               "Services I Offer",
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFF7562E0),
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),

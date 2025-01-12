@@ -86,7 +86,7 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
                   const Text(
                     "Minahil Fatima",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color(0xFF7562E0),
                       fontSize: 48,
                       fontWeight: FontWeight.bold,
                     ),

@@ -50,7 +50,7 @@ class _ServicesMobileState extends State<ServicesViewMobile> {
             const Text(
               "Services I Offer",
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFF7562E0),
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
