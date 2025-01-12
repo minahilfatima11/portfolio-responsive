@@ -20,6 +20,7 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFF181824),
         title: const Text(
           "M.Fatima",

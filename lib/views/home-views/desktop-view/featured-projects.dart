@@ -14,6 +14,7 @@ class FeaturedProjects extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF0F0D1F),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFF181824),
         title: const Text(
           "M.Fatima",
