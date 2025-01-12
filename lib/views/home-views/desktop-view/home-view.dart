@@ -150,21 +150,28 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
             ),
             // Right Section
             Container(
-              width: width * 0.5,
-              alignment: Alignment.center,
-              child: Container(
-                height: height * 0.4,
-                width: height * 0.4,
-                decoration: BoxDecoration(
-                  color: const Color(0xff7562E0),
-                  shape: BoxShape.circle,
-                  image: const DecorationImage(
-                    image: AssetImage('assets/profile.jpg'), // Replace with your image path
-                    fit: BoxFit.cover,
-                  ),
+              height: height * 0.3,
+              width: height * 0.3,
+              decoration: BoxDecoration(
+                color: const Color(0xff7562E0),
+                shape: BoxShape.circle,
+                image: const DecorationImage(
+                  image: AssetImage('assets/profile.jpg'),
+                  fit: BoxFit.cover,
                 ),
+                border: Border.all(
+                  color: Color(0xff7562E0), // Border color
+                  width: 5, // Border width
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    blurRadius: 20,
+                    offset: Offset(0, 8), // Shadow position
+                  ),
+                ],
               ),
-            ),
+            )
           ],
         ),
       ),
